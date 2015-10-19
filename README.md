@@ -1,3 +1,12 @@
+# SpatDIF for android
+
+Run on root folder:
+
+```bash
+ndk-build
+```
+
+
 # What is SpatDIF:
 
 In computer music, many spatialization algorithms use a self-contained syntax and storage-format, wherein control messages (e.g. trajectories to move a sound virtually) programmed for one application are incompatible with any other implementation.
@@ -15,5 +24,5 @@ Execute the following commands from your terminal:
 > make
 </pre>
 
-The makefile detects the OS you are using, compiles and generates a shared library named 
+The makefile detects the OS you are using, compiles and generates a shared library named
 spatdiflib.dynlib on MacOS or spatdiflib.so on Linux, subsequently compiles the sources in the example folder.
