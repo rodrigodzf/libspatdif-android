@@ -1,0 +1,53 @@
+UNAME := $(shell uname -s)
+ANDROID_NDK_BIN:=/Users/rodrigodiaz/Library/Android/ndk/toolchains/arm-linux-androideabi-4.8/prebuilt/darwin-x86_64/bin
+# Compilation Tools
+CC := $(ANDROID_NDK_BIN)/arm-linux-androideabi-gcc
+CPP := $(ANDROID_NDK_BIN)/arm-linux-androideabi-g++
+AR := $(ANDROID_NDK_BIN)/arm-linux-androideabi-ar
+# Compiler flags
+# Specify all the flags below which you want to use for your compilation, For this simple example, we only need to specify the include directory path
+# LIBS = -lstdc++
+CFLAGS := -libstdc++
+OBJECTS = *.o *.a
+FILES = *.cpp
+EXAMPLE_DIR = ../examples
+
+TXML_PATH = ./libs/tinyxml2
+TXML_FILE = tinyxml2.cpp
+TXML_FLAG = -arch x86_64 -arch i386 #FAT
+
+JSON_PATH = ./libs/libjson
+JSON_SOURCE_PATH = $(JSON_PATH)/_internal/Source
+JSON_OBJECT_PATH = $(JSON_PATH)/Objects_static
+
+JSON_MAKE = makefile
+
+INCLUDE_PATH = -I$(TXML_PATH) -I$(JSON_PATH) -I$(JSON_SOURCE_PATH)
+INSTALL_PATH = /usr/local/lib
+
+all:
+	-@make $(UNAME)
+
+libspatdif.a: $(FILES)
+	$(CPP) $(CFLAGS) $(LIBS) $(INCLUDE_PATH) -c $(FILES)
+	$(CPP) $(CFLAGS) -o $@ -flat_namespace *.o $(JSON_OBJECT_PATH)/*.o
+
+Darwin: tinyxml2.o libjson.a libspatdif.a
+
+tinyxml2.o: $(TXML_PATH)/$(TXML_FILES)
+	$(CC) $(TXML_FLAG) -c $(TXML_PATH)/$(TXML_FILE)
+
+libjson: $(JSON_PATH)/$(JSON_MAKE)
+	make -C $(JSON_PATH)
+
+
+clean:
+	-@make clean_$(UNAME)
+
+clean_Linux:
+	rm *.so *.o
+	cd ../examples; make clean
+
+clean_Darwin:
+	rm *.dylib *.o
+	cd ../src/libs/libjson ;make clean

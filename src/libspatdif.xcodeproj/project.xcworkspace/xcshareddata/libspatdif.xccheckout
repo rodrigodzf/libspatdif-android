@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FEC1DDA1-3D1C-4DC6-9421-38BC82230F38</string>
+	<key>IDESourceControlProjectName</key>
+	<string>libspatdif</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F0AD3AAACC55ADBD659602B0415CEE35968E7605</key>
+		<string>code.zhdk.ch:spatdiflib.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>src/libspatdif.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F0AD3AAACC55ADBD659602B0415CEE35968E7605</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>code.zhdk.ch:spatdiflib.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F0AD3AAACC55ADBD659602B0415CEE35968E7605</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F0AD3AAACC55ADBD659602B0415CEE35968E7605</string>
+			<key>IDESourceControlWCCName</key>
+			<string>spatdiflib</string>
+		</dict>
+	</array>
+</dict>
+</plist>
